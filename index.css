@@ -95,3 +95,66 @@ a:hover {
 .item:hover {
     transform: scale(1.05);
 }
+
+/* More stolen presets*/
+.modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 600px;
+    background-color: #1e1e1e;
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(255, 140, 0, 0.7);
+    z-index: 1000;
+    text-align: center;
+}
+
+.modal-content h2 {
+    margin-top: 0;
+    color: orange;
+}
+
+.modal-content p {
+    margin: 15px 0;
+    font-size: 16px;
+    color: #ff6347;
+}
+
+.loading {
+    width: 40px;
+    height: 40px;
+    border: 5px solid #fff;
+    border-top: 5px solid orange;
+    border-radius: 50%;
+    margin: 20px auto;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+button {
+    background-color: #ff6347;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: orange;
+}
+
+.mini {
+    top: 20px; 
+    right: 20px;
+    position: fixed;
+    height: 50px;
+    width: 50px;
+}
