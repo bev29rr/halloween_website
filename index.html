@@ -10,13 +10,56 @@
     <h1>Halloween Spooktacular deals</h1> 
 
     <main>
-        <h2>Shop now:</h2>
-        <div></div>
+        <h2>Shop now:</h2> <h2 id="moneyDisplay"></h2>
+        <div id="items">
+
+        </div>
     </main>
 
     <footer>
         <p>&copy; 2024 ShoppingTime24. All rights reserved</p>
     </footer>
+    <script>
+        /* The script src tag was bugging out so it is all here instead*/
+        let money = 100;
 
+        const items = [
+        { name: "Spooky Candle", price: 5, img: "spooky_candle.jpg" },
+        { name: "Pumpkin Lantern", price: 15, img: "pumpkin_lantern.webp" },
+        { name: "Witch Hat", price: 8, img: "witch_hat.jpg" },
+        { name: "Skeleton Costume", price: 20, img: "skeleton_costume.jpg" },
+        { name: "Ghost Lights", price: 12, img: "ghost_lights.jpg" },
+        { name: "Bat Decorations", price: 10, img: "bat_decorations.jpg" }
+        ];
+
+        const itemsContainer = document.getElementById('items');
+        const moneyDisplay = document.getElementById('moneyDisplay');
+
+        items.forEach((item, index) => {
+            const itemDiv = document.createElement('div');
+            itemDiv.classList.add('item');
+            itemDiv.innerHTML = `
+                <img src="${item.img}" alt="${item.name}">
+                <h3>${item.name}</h3>
+                <p>£ ${item.price}</p>
+            `;
+            itemDiv.addEventListener('click', () => {
+                clicked(item.name);
+                updateMoney(item.price);
+            });
+            itemsContainer.appendChild(itemDiv);
+        });
+
+        function clicked(itemName) {
+            window.alert(`${itemName} was purchased, but no stocks remains!`);
+        }
+
+        function updateMoney(price) {
+            money -= price;
+            moneyDisplay.innerHTML = `£ ${money}`;
+        }
+
+        updateMoney(0);
+    </script>
 </body>
 </html>
